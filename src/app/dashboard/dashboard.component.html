@@ -1,0 +1,57 @@
+<!-- https://i.picsum.photos/id/524/1366/768.jpg?hmac=smnSIEA_Ah5Y61JSDY8vghGra-Y8IxWWz8tTx6sGQNQ -->
+<div class="main-dashboard">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+                (click)="toggleDrawer()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <span>My App</span>
+            <span class="space-10"></span>
+
+            <!-- <mat-button-toggle-group color="primary" name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle color="primary" routerLink="/app1">App 1</mat-button-toggle>
+                <mat-button-toggle routerLink="/app2">App 2</mat-button-toggle>
+                <mat-button-toggle routerLink="/admin">Admin</mat-button-toggle>
+                <mat-button-toggle routerLink="/pharmacy">Pharmacy</mat-button-toggle>
+            </mat-button-toggle-group> -->
+
+            <span class="example-spacer"></span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item [routerLink]="['/']">
+                    <mat-icon>home</mat-icon>
+                    <span>Home</span>
+                </button>
+                <button mat-menu-item [routerLink]="['/admin']">
+                    <mat-icon>supervised_user_circle</mat-icon>
+                    <span>Admin</span>
+                </button>
+                <button mat-menu-item [routerLink]="['/pharmacy']">
+                    <mat-icon>medical_services</mat-icon>
+                    <span>Pharmacy</span>
+                </button>
+                <!-- <button mat-menu-item>
+                    <mat-icon>dialpad</mat-icon>
+                    <span>Admin</span>
+                </button>
+                <button mat-menu-item disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Pharmacy</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Home</span>
+                </button> -->
+
+            </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button (click)="openDialog()">Open dialog</button>
+    <router-outlet></router-outlet>
+</div>

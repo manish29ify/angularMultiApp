@@ -1,0 +1,38 @@
+<input type="hidden" #showF>
+{{ showF.value}}
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" [(opened)]="opened">
+        <!-- <p>Auto-resizing sidenav</p>
+        <p *ngIf="showF.value=='Yes'">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showF.value = (showF.value=='Yes')? 'No' :'Yes'" mat-raised-button>
+            Toggle extra text
+        </button> -->
+        <!-- <mat-nav-list #shoes [multiple]="false">
+            <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+                {{shoe}}
+            </mat-list-option>
+        </mat-nav-list> -->
+        <mat-nav-list>
+            <!-- <h3 matSubheader>This is the listview</h3> -->
+            <a mat-list-item routerLink="/pharmacy/one">One</a>
+            <a mat-list-item routerLink="/pharmacy/two">Two</a>
+            <!-- <a mat-list-item [routerLink]="['/detail']">
+                <span matLine>Title</span>
+                <button mat-icon-button (click)="onAdd($event)">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <button mat-icon-button (click)="onRemove($event)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </a> -->
+        </mat-nav-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button>
+    </div>
+
+</mat-drawer-container>
